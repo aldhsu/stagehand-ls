@@ -1,0 +1,88 @@
+{
+  "Gemfile": {"alternate": "Gemfile.lock", "type": "lib"},
+  "Gemfile.lock": {"alternate": "Gemfile"},
+  "README": {"alternate": "config/database.yml"},
+  "README.*": {"alternate": "config/database.yml"},
+  "Rakefile": {"type": "task"},
+  "app/channels/*_channel.rb": {
+    "template": [
+      "class {camelcase|capitalize|colons}Channel < ActionCable::Channel",
+      "end"
+    ],
+    "type": "channel"
+  },
+  "app/controllers/*_controller.rb": {
+    "affinity": "controller",
+    "template": [
+      "class {camelcase|capitalize|colons}Controller < ApplicationController",
+      "end"
+    ],
+    "type": "controller"
+  },
+  "app/controllers/concerns/*.rb": {
+    "affinity": "controller",
+    "template": [
+      "module {camelcase|capitalize|colons}",
+      "\tinclude ActiveSupport::Concern",
+      "end"
+    ],
+    "type": "controller"
+  },
+  "app/helpers/*_helper.rb": {
+    "affinity": "controller",
+    "template": ["module {camelcase|capitalize|colons}Helper", "end"],
+    "type": "helper"
+  },
+  "app/jobs/*_job.rb": {
+    "affinity": "model",
+    "template": [
+      "class {camelcase|capitalize|colons}Job < ActiveJob::Base",
+      "end"
+    ],
+    "type": "job"
+  },
+  "app/mailers/*.rb": {
+    "affinity": "controller",
+    "template": [
+      "class {camelcase|capitalize|colons} < ActionMailer::Base",
+      "end"
+    ]
+  },
+  "app/models/*.rb": {
+    "affinity": "model",
+    "template": ["class {camelcase|capitalize|colons}", "end"],
+    "type": "model"
+  },
+  "app/serializers/*_serializer.rb": {
+    "template": [
+      "class {camelcase|capitalize|colons}Serializer < ActiveModel::Serializer",
+      "end"
+    ],
+    "type": "serializer"
+  },
+  "config/*.yml": {
+    "alternate": [
+      "config/{}.example.yml",
+      "config/{}.yml.example",
+      "config/{}.yml.sample"
+    ]
+  },
+  "config/*.example.yml": {"alternate": "config/{}.yml"},
+  "config/*.yml.example": {"alternate": "config/{}.yml"},
+  "config/*.yml.sample": {"alternate": "config/{}.yml"},
+  "config/application.rb": {"alternate": "config/routes.rb"},
+  "config/environment.rb": {"alternate": "config/routes.rb"},
+  "config/environments/*.rb": {
+    "alternate": ["config/application.rb", "config/environment.rb"],
+    "type": "environment"
+  },
+  "config/initializers/*.rb": {"type": "initializer"},
+  "config/routes.rb": {
+    "alternate": ["config/application.rb", "config/environment.rb"],
+    "type": "initializer"
+  },
+  "gems.locked": {"alternate": "gems.rb"},
+  "gems.rb": {"alternate": "gems.locked", "type": "lib"},
+  "lib/*.rb": {"type": "lib"},
+  "lib/tasks/*.rake": {"type": "task"}
+}
