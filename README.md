@@ -10,3 +10,9 @@ eg. Rails projects - from a model file you can infer where the test for the mode
 # Stretch goals
 [ ] Uses treesitter for smarter templating
 [ ] Embeddable logic in templates
+
+# TODO
+[x] Initialize an LSP
+[x] Have the code action capability
+[x] Report back code action capability
+[ ] Go to alternate file action
