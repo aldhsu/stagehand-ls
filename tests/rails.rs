@@ -1,4 +1,4 @@
-use stagehand_lsp::projection::ProjectionCollection;
+use stagehand_language_server::projection::ProjectionCollection;
 
 #[test]
 fn it_can_load_the_fixture() {

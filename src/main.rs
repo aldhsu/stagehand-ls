@@ -47,7 +47,11 @@ impl LanguageServer for Backend {
         Ok(None)
     }
 
-    async fn code_action(&self, _params: CodeActionParams) -> Result<Option<CodeActionResponse>> {
+    async fn code_action(&self, params: CodeActionParams) -> Result<Option<CodeActionResponse>> {
+        // get file walk dirs up to somewhere to find config?
+        // limit is git directory?
+        // otherwise default?
+        dbg!(params.text_document.uri);
         Ok(Some(vec![CodeAction {
             title: "My test code action".into(),
             kind: None,
